@@ -17,7 +17,6 @@ import java.util.Objects;
 @Autowired
 UserDao userDao;
 
-
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
@@ -27,7 +26,8 @@ public class UserServiceImpl implements UserService {
         if (validateSignUpMap(requestMap)){
             User user = userDao.findByEmailId(requestMap.get("emailId"));
             if (Objects.isNull(user)){
-                userDao.save()
+                userDao.save(getUserFromMap(requestMap));
+                return CafeUtils.getResponseEntity("Successfully Registered", HttpStatus.OK);
             }
             else {
                  return CafeUtils.getResponseEntity("Email already exists.",HttpStatus.BAD_REQUEST );
@@ -38,7 +38,6 @@ public class UserServiceImpl implements UserService {
             return CafeUtils.getResponseEntity(CafeConstants.INVALID_DATA, HttpStatus.BAD_REQUEST);
         }
 
-        return null;
 
     }
 
@@ -49,8 +48,17 @@ public class UserServiceImpl implements UserService {
             return true;
         }
         return false;
+    }
 
-
+    private User getUserFromMap(Map<String,String> requestMap){
+        User user = new User();
+        user.setName(requestMap.get("name"));
+        user.setContactNumber(requestMap.get("contactNumber"));
+        user.setEmail(requestMap.get("email"));
+        user.setPassword(requestMap.get("password"));
+        user.setStatus(requestMap.get("false"));
+        user.setRole(requestMap.get("user"));
+        return user;
     }
 
 
