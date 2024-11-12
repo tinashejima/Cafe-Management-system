@@ -1,0 +1,11 @@
+------run mysql--------
+sudo mysql -uroot -p
+
+
+CREATE USER 'tynash'@'localhost' IDENTIFIED BY 'Root123!';
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'tynash'@'localhost';
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+
