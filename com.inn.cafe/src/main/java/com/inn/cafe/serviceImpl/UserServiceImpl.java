@@ -15,7 +15,6 @@ import java.util.Map;
 import java.util.Objects;
 
 
-
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
@@ -29,7 +28,7 @@ public class UserServiceImpl implements UserService {
         try {
 
             if (validateSignUpMap(requestMap)) {
-                User user = userDao.findByEmailId(requestMap.get("emailId"));
+                User user = userDao.findByEmailId(requestMap.get("email"));
                 if (Objects.isNull(user)) {
                     userDao.save(getUserFromMap(requestMap));
                     return CafeUtils.getResponseEntity("Successfully Registered", HttpStatus.OK);
