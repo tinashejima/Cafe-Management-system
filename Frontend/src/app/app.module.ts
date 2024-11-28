@@ -14,6 +14,21 @@ import { FullComponent } from './layouts/full/full.component';
 import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { SignupComponent } from './signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxUiLoaderConfig, NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
+
+
+const ngxUiLoaderConfig:NgxUiLoaderConfig={
+  text:"Loading...",
+  textColor:"#FFFFFF",
+  textPosition:"center-center",
+  bgsColor:"#7b1fa2",
+  fgsColor:"#7b1fa2",
+  fgsType:SPINNER.doubleBounce,
+  fgsSize:100,
+  hasProgressBar:false
+
+}
 
 @NgModule({
   declarations: [	
