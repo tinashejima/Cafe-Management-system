@@ -8,10 +8,12 @@ describe('ViewBillProductsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewBillProductsComponent]
+      declarations: [ ViewBillProductsComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ViewBillProductsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

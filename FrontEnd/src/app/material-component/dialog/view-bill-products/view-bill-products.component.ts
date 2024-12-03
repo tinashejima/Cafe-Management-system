@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-view-bill-products',
-  imports: [],
   templateUrl: './view-bill-products.component.html',
-  styleUrl: './view-bill-products.component.css'
+  styleUrls: ['./view-bill-products.component.scss']
 })
-export class ViewBillProductsComponent {
+export class ViewBillProductsComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit() {
+  }
 }

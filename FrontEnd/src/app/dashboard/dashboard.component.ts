@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
-
+import { Component, AfterViewInit } from '@angular/core';
 @Component({
-  selector: 'app-dashboard',
-  imports: [],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+	selector: 'app-dashboard',
+	templateUrl: './dashboard.component.html',
+	styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements AfterViewInit {
+
+	ngAfterViewInit() { }
+
+	constructor() {
+	}
 
 }

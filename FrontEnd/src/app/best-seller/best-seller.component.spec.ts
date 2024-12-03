@@ -8,10 +8,12 @@ describe('BestSellerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BestSellerComponent]
+      declarations: [ BestSellerComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(BestSellerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
