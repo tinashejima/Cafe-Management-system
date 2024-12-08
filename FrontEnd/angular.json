@@ -5,7 +5,12 @@
   "projects": {
     "FrontEnd": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -94,3 +99,4 @@
     }
   }
 }
+
